@@ -2,43 +2,50 @@ import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-nativ
 import React from 'react'
 import { StatusBar } from 'expo-status-bar'
 
-const LoginScreen = () => {
+const SignupScreen = () => {
   return (
     <View style = {styles.container}>
         <StatusBar backgroundColor={'white'}/>
         <View style={{paddingVertical: 12, width: '90%', alignSelf: 'center', marginBottom: 10}}>
-            <Text style={{alignSelf: 'center', fontSize: 25, fontWeight: 700}}>Login</Text>
+            <Text style={{alignSelf: 'center', fontSize: 25, fontWeight: 700}}>Sign up</Text>
         </View>
-        
+
         <TextInput
             placeholder='Email'
             keyboardType='email-address'
             style={styles.input}
         />
+
         <TextInput
             placeholder='Password'
             style={styles.input}
         />
-        <TouchableOpacity style={styles.loginbutton} onPress={() => alert('Login Successfull!')}>
-            <Text style={styles.loginbuttontxt}>Login</Text>
-        </TouchableOpacity>
 
+        <TextInput
+            placeholder='Conform Password'
+            style={styles.input}
+        />
+
+        <TouchableOpacity style={styles.loginbutton} onPress={() => alert('Account Created Successfully!')}>
+            <Text style={styles.loginbuttontxt}>Sign up</Text>
+        </TouchableOpacity>
+        
         <View style={{marginTop: 10, width: '90%', alignSelf: 'center', flexDirection: 'row', justifyContent: 'flex-start'}}>
             <View style={{paddingLeft: 10, paddingTop: 10}}>
-                <Text style={{fontSize: 15, fontStyle:'italic'}}>Don't have an account?</Text>
+                <Text style={{fontSize: 15, fontStyle:'italic'}}>Already have an account?</Text>
             </View>
+
             <View style={styles.signupbutton}>
                 <TouchableOpacity>
-                    <Text style={styles.signupbuttontxt}>SignUp</Text>
+                    <Text style={styles.signupbuttontxt}>Login</Text>
                 </TouchableOpacity>
             </View>
         </View>
-        
     </View>
   )
 }
 
-export default LoginScreen
+export default SignupScreen
 
 const styles = StyleSheet.create({
     container: {
@@ -91,5 +98,4 @@ const styles = StyleSheet.create({
         alignSelf: 'center', 
         paddingHorizontal: 10 
     }
-
 })
